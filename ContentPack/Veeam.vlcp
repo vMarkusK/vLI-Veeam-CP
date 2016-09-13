@@ -1,0 +1,392 @@
+{
+  "name":"Veeam",
+  "namespace":"com.veeam.general",
+  "contentPackId":"com.veeam.general",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"veeam_eventlog_backup_jobname",
+    "preContext":"\\s'",
+    "postContext":"'\\s",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"\\\"Backup Job\\\"\",\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_eventlog_backupsync_jobname",
+    "preContext":"\\s'",
+    "postContext":"'\\s",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"Veeam Backup\",\"fieldType\":\"STRING\",\"isExtracted\":false}],\"searchTerms\":\"\\\"BackupSync Job\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_cloudgate_acceptedip",
+    "preContext":"Accepted connection request from\\s\\[",
+    "postContext":":\\d+",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000",
+    "constraints":"{\"searchTerms\":\"gate\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_cloudgate_failedip",
+    "preContext":"failed to process received data.\\sClient peer:\\s\\[",
+    "postContext":":\\d+",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"gate ERR\"}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_cloudportal_login",
+    "preContext":"Login:\\s\\[",
+    "postContext":"\\]\\,\\sAddress",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"tenant\"}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_errorcode",
+    "preContext":"\\s<",
+    "postContext":">\\sError",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5sxe4tpojrw6zdf",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_level",
+    "preContext":">\\s",
+    "postContext":"\\s\\s",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_ip",
+    "preContext":"Server:\\s",
+    "postContext":"\\,\\suser",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5uxa000",
+    "constraints":"{\"searchTerms\":\"storeonce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_openfile",
+    "preContext":"Opening file\\s\\[\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\] ",
+    "postContext":"\\:",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlomzuwyzi0",
+    "constraints":"{\"searchTerms\":\"storeonce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_openip",
+    "preContext":"Opening file\\s\\[",
+    "postContext":"\\]",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlonfya0000",
+    "constraints":"{\"searchTerms\":\"storeonce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_os",
+    "preContext":"Storage\\sOS:\\s",
+    "postContext":"\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxg000",
+    "constraints":"{\"searchTerms\":\"StoreOnce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_sn",
+    "preContext":"Serial:\\s",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5zw4000",
+    "constraints":"{\"searchTerms\":\"storeonce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_storeonce_user",
+    "preContext":"User:\\s",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl52xgzls",
+    "constraints":"{\"searchTerms\":\"storeonce\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"veeam_filelog_warningcode",
+    "preContext":"\\s<",
+    "postContext":">\\sWarning",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl53wc4tonfxgoy3pmrsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Veeam - Allgemein",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of events over time grouped by level in Eventlog",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468766056723,\"endTimeMillis\":1468852456722,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events over time grouped by level in Filelog",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467618834345,\"endTimeMillis\":1467705234344,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_level\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of events grouped by level in Eventlog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467618735445,\"endTimeMillis\":1467705135444,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by level in Filelog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467537988440,\"endTimeMillis\":1467624388439,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_level\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Non Info Eventlog events",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467614955661,\"endTimeMillis\":1467701356195,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"level\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"information,informationen\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          } ]
+        }, {
+          "name":"Non Info Filelog events",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467539218162,\"endTimeMillis\":1467625618161,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"veeam\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cc01vcb0001.vop.loc\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of events grouped by veeam_filelog_errorcode",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468770479336,\"endTimeMillis\":1468856879335,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"veeam\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"STARTS_WITH\",\"value\":\"error\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5sxe4tpojrw6zdf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_errorcode\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5sxe4tpojrw6zdf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_errorcode\",\"preContext\":\"\\\\s<\",\"postContext\":\">\\\\sError\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5sxe4tpojrw6zdf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by veeam_filelog_warningcode",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468770439945,\"endTimeMillis\":1468856839944,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"veeam\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"CONTAINS\",\"value\":\"warning\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl53wc4tonfxgoy3pmrsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_warningcode\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl53wc4tonfxgoy3pmrsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_warningcode\",\"preContext\":\"\\\\s<\",\"postContext\":\">\\\\sWarning\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl53wc4tonfxgoy3pmrsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Veeam - StoreOnce",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of  opened StoreOnce Files by IP",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468833288704,\"endTimeMillis\":1468919688703,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlomzuwyzi0\",\"operator\":\"EXISTS\",\"value\":\"cc01ref_file:/backup-ref/backup-ref.vbm\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_storeonce_openip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlonfya0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_storeonce_openfile\",\"preContext\":\"Opening file\\\\s\\\\[\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\] \",\"postContext\":\"\\\\:\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlomzuwyzi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"storeonce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_storeonce_openip\",\"preContext\":\"Opening file\\\\s\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxazlonfya0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"storeonce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"List of StoreOnce OS Version by Serial Number",
+          "info":"",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468837307645,\"endTimeMillis\":1468923707644,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5zw4000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_storeonce_os\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"veeam_filelog_storeonce_sn\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5zw4000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_storeonce_os\",\"preContext\":\"Storage\\\\sOS:\\\\s\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5xxg000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"StoreOnce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_storeonce_sn\",\"preContext\":\"Serial:\\\\s\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5zw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"storeonce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of StoreOnce events grouped by User in Filelog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468766334478,\"endTimeMillis\":1468852734477,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\",\"value\":\"info\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl52xgzls\",\"operator\":\"EXISTS\",\"value\":\"172.20.7.2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_storeonce_user\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl52xgzls\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_storeonce_user\",\"preContext\":\"User:\\\\s\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl52xgzls\",\"constraints\":\"{\\\"searchTerms\\\":\\\"storeonce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of StoreOnce events grouped by IP in Filelog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467621349211,\"endTimeMillis\":1467624949210,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"EXISTS\",\"value\":\"info\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5uxa000\",\"operator\":\"EXISTS\",\"value\":\"172.20.7.2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_storeonce_ip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5uxa000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"veeam_filelog_storeonce_ip\",\"preContext\":\"Server:\\\\s\",\"postContext\":\"\\\\,\\\\suser\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5zxi33smvxw4y3fl5uxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"storeonce\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Veeam - Jobs",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of events grouped by Backup Job Name in Eventlog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468765924441,\"endTimeMillis\":1468852324440,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_eventlog_backup_jobname\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_eventlog_backup_jobname\",\"preContext\":\"\\\\s'\",\"postContext\":\"'\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Backup Job\\\\\\\"\\\",\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam backup\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by Backup Copy Job Name in Eventlog",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468765978067,\"endTimeMillis\":1468852378066,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_eventlog_backupsync_jobname\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_eventlog_backupsync_jobname\",\"preContext\":\"\\\\s'\",\"postContext\":\"'\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"Veeam Backup\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}],\\\"searchTerms\\\":\\\"\\\\\\\"BackupSync Job\\\\\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Failed Backup Jobs over time ",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468766996029,\"endTimeMillis\":1468853396028,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"finished with failed\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"operator\":\"EXISTS\",\"value\":\"backupcopy_vbc\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_eventlog_backup_jobname\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_eventlog_backup_jobname\",\"preContext\":\"\\\\s'\",\"postContext\":\"'\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xax3kn5rg4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Backup Job\\\\\\\"\\\",\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam backup\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Failed Backup Copy Jobs over time ",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468248188535,\"endTimeMillis\":1468852988534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"finished with failed\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"backupcopy_vbc\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_eventlog_backupsync_jobname\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_eventlog_backupsync_jobname\",\"preContext\":\"\\\\s'\",\"postContext\":\"'\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6zlwmvxhi3dpm5pweyldnn2xa43znzrv62tpmjxgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"Veeam Backup\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}],\\\"searchTerms\\\":\\\"\\\\\\\"BackupSync Job\\\\\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Modified Jobs by Hostname over time ",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468767201491,\"endTimeMillis\":1468853601490,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"veeam backup\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"has been modified\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cc01vbb0001.vop.loc\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"veeam mp\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Non Info Job events grouped by level  in Filelog",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467578333689,\"endTimeMillis\":1467664733688,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"info\"},{\"internalName\":\"veeam_joblog\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_joblog\",\"internalName\":\"veeam_joblog\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"veeam_filelog_level\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_level\",\"preContext\":\">\\\\s\",\"postContext\":\"\\\\s\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5wgk5tfnq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Veeam - Cloud Connect",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Veeam Cloud Connect Gataway Connections - Success over time",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468827879218,\"endTimeMillis\":1468914279217,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudgate_acceptedip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudgate_acceptedip\",\"preContext\":\"Accepted connection request from\\\\s\\\\[\",\"postContext\":\":\\\\d+\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"gate\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Veeam Cloud Connect Gataway Connections - Failed over time",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468828848803,\"endTimeMillis\":1468915248802,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudgate_failedip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudgate_failedip\",\"preContext\":\"failed to process received data.\\\\sClient peer:\\\\s\\\\[\",\"postContext\":\":\\\\d+\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"gate ERR\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Veeam Cloud Connect Gataway Connections - Success",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1467626636589,\"endTimeMillis\":1467713036588,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudgate_acceptedip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudgate_acceptedip\",\"preContext\":\"Accepted connection request from\\\\s\\\\[\",\"postContext\":\":\\\\d+\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5qwgy3fob2gkzdjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"gate\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Veeam Cloud Connect Gataway Connections - Failed",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"failed\",\"startTimeMillis\":1468828747386,\"endTimeMillis\":1468915147385,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"operator\":\"EXISTS\",\"value\":\"217.86.249.48\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudgate_failedip\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudgate_failedip\",\"preContext\":\"failed to process received data.\\\\sClient peer:\\\\s\\\\[\",\"postContext\":\":\\\\d+\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmrtwc5dfl5tgc2lmmvsgs4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"gate ERR\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Veeam CloudPortal Logins - Success over time",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468828076754,\"endTimeMillis\":1468914476753,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"veeam.cloudportal.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"operator\":\"EXISTS\",\"value\":\"cc-cust-vnc\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication successful\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudportal_login\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudportal_login\",\"preContext\":\"Login:\\\\s\\\\[\",\"postContext\":\"\\\\]\\\\,\\\\sAddress\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"tenant\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Veeam CloudPortal Logins - Failed over time",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1468828107066,\"endTimeMillis\":1468914507065,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"veeam\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\",\"value\":\"c:\\\\\\\\programdata\\\\\\\\veeam\\\\\\\\backup\\\\\\\\svc.veeambackup.log\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"veeam.cloudportal.log\"},{\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"operator\":\"EXISTS\",\"value\":\"cc-cust-vnc\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"tenant authentication failed\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"veeam_filelog_cloudportal_login\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"veeam_filelog_cloudportal_login\",\"preContext\":\"Login:\\\\s\\\\[\",\"postContext\":\"\\\\]\\\\,\\\\sAddress\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwmvswc3jom5sw4zlsmfwhmzlfmfwv6ztjnrswy33hl5rwy33vmryg64tumfwf63dpm5uw4000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"veeam\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"tenant\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"VEEAM",
+    "info":"",
+    "agentConfig":"[winlog|VEEAM]\nchannel=Veeam Backup\ntags={\"Appname\" : \"Veeam\"}\n\n[filelog|VEEAM-LOG]\ndirectory=C:\\ProgramData\\Veeam\\Backup\ninclude=*.log\nexclude=svc.veeaminstallerdll.log\nevent_marker=(\\[)\\d{2}(\\.|-)\\d{2}(\\.|-)\\d{4}\\s\\d{2}(\\:|-)\\d{2}(\\:|-)\\d{2}(\\])\ntags={\"Appname\" : \"Veeam\"}\n"
+  }, {
+    "name":"Veeam Jobs",
+    "info":"",
+    "agentConfig":"[filelog|VEEAM-JOB-Backup_VBC]\ndirectory=C:\\ProgramData\\Veeam\\Backup\\Backup_VBC\ninclude=*.log\nevent_marker=(\\[)\\d{2}(\\.|-)\\d{2}(\\.|-)\\d{4}\\s\\d{2}(\\:|-)\\d{2}(\\:|-)\\d{2}(\\])\ntags={\"Appname\" : \"Veeam\", \"Veeam_JobLog\" : \"Backup_VBC\"}\n\n[filelog|VEEAM-JOB-BackupCopy_VBC]\ndirectory=C:\\ProgramData\\Veeam\\Backup\\BackupCopy_VBC\ninclude=*.log\nevent_marker=(\\[)\\d{2}(\\.|-)\\d{2}(\\.|-)\\d{4}\\s\\d{2}(\\:|-)\\d{2}(\\:|-)\\d{2}(\\])\ntags={\"Appname\" : \"Veeam\", \"Veeam_JobLog\" : \"BackupCopy_VBC\"}\n"
+  } ],
+  "author":"Markus Kraus",
+  "url":"http://mycloudrevolution.com/",
+  "contentVersion":"0.8",
+  "info":"",
+  "instructions":"",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAE0AAABMCAIAAACnN61CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAASdEVYdFNvZnR3YXJlAEdyZWVuc2hvdF5VCAUAAAOGSURBVHhe7ZrLUhNBGIV9PFyLW1142Xl5G6sUESKEqEC8LljoRnwGTYIB9xpd4kp/a86Zypx0z2R6MmM6zFffAvr83Z1TRWlR9KX1o7WLYNtztWx7VvDa+yt/ssgAVutEbizoef/T7c5gQxYLjaznveNbv35PbM/+165E+cbU00r+PP9XMqFU1Wh63j2+OTn/gR3kYLwnYz6j6bn15SHGs8xZtbBnHeImIqn357Y36mBHlsNxTyZnjamn6avaHz+TSTGynubeaBv7svTHz2Vy2vh6mr6qL0+9VaPsaXZHW9idxVf16tFlTBAZqEPcRCSdq6fZHbqrvjrdl8lExCQ/DUAONBEQSeftaZaqiozkpwHIgSYCImmJnubu8AmOyfJ6pioCkp8GIAeaCIik5XqaO8NNnJTlzdnB9BhWyXQ0mwYgB5oIiKSle5r+qofpDJZIuu5MA5ADTQRE0pCe5s7wMc7L8vasnwzge5JunCd1ilEiqYmASBrY03w68FYt/H8Fq0RSpxglkpoIiKThPU1f1Xff+viKyEasEkmdYpRIaiIgklbqafqqCrILq0RSpxglkpoIiKRVe5qdwQbO9iNbsEokdYpRIqmJgEi6gJ5mZ/AIx3uQeawSSZ1ilEhqIiCSOnpe/7AeoP0KjhtcyBVYJZI6xSiR1ERAJHX0xOBCyb9CUqcYJZKaCIikbc+Fkn+FpE4xSiQ1ERBJ254LJf8KSZ1ilEhqIiCSOno2ID5LBeRAEwGRtO1Zp/gsFZADTQRE0rZnneKzVEAONBEQSR09MUgkNRFUQA5swLYnkdREUAE5sAHbnkRSE0EF5MAGXEBPSZ1ilEha3cK/XC1dzzsfb2x+fiCLhUbW00pOzr/bQHe4JVG+MfVMSybsjbZlIMdoekrJhN6oI2M+o+npe+HSO5mrakw/t75nHy9OdmVy1sj+HQquGllP0/fsI//hXXw9TV/VnNdoUfY0fS9cfFUL/xK5pD1N37MP32s0xETSBfQMQA706avqfLeEjEi61D1N3wuX2aoIiKTL3tP0PfuQd0tYJdORGUFP01d1+t0Slki6nhhHT9P3wiV9t4TvSboxMaTn/7LKC5eYepo5VfEVkY2R9TTDXrjE19MMeOESZU+z7AuXpegpT1fmtNQLl+KeddDAjXJF27NOGrhRrmh71kkDN8oVjp4radtztWx7rpYXo+fR2l+KohLG9Be3NAAAAABJRU5ErkJggg=="
+}
