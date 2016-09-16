@@ -16,9 +16,9 @@ vRealize Log Insight Content Pack for Veeam
 
 Project Owner: Markus Kraus
 
-Project WebSite: http://mycloudrevolution.com/
+Project WebSite: http://mycloudrevolution.com/projekte/vrealize-log-insight-veeam-content-pack/
 
-Project Details: 
+Project Details: Veeam Backup $ Replication Content Pack for VMware vRealize Log Insight
 
 <a name="Features">
 # Features
@@ -43,7 +43,7 @@ Project Details:
 
 1. Download /ContentPack/Veeam.vlcp
 2. Import Content Pack
-3. Configure Agent Group "Veeam" fro all your Veeam Severs
+3. Configure Agent Group "Veeam" for all your Veeam Severs
 4. If you need to monitor Explicit Jobs in addition. Add another Agent Group for teh Veeam Main Server "Veeam - Jobs":
 
 ```javascript
