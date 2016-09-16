@@ -18,7 +18,7 @@ Project Owner: Markus Kraus
 
 Project WebSite: http://mycloudrevolution.com/projekte/vrealize-log-insight-veeam-content-pack/
 
-Project Details: Veeam Backup $ Replication Content Pack for VMware vRealize Log Insight
+Project Details: Veeam Backup & Replication Content Pack for VMware vRealize Log Insight
 
 <a name="Features">
 # Features
