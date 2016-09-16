@@ -6,7 +6,7 @@ vRealize Log Insight Content Pack for Veeam
 |Navigation|
 |-----------------|
 |[About](#About)|
-|[About](#Features)|
+|[Features](#Features)|
 
 
 <a name="About">
