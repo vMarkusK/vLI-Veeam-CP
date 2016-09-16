@@ -44,16 +44,16 @@ Project Details:
 1. Download /ContentPack/Veeam.vlcp
 2. Import Content Pack
 3. Configure Agent Group "Veeam" fro all your Veeam Severs
-4. If you need to monitor Explicit Jobs in addition. Add another Agent Group "Veeam - Jobs":
+4. If you need to monitor Explicit Jobs in addition. Add another Agent Group for teh Veeam Main Server "Veeam - Jobs":
 
 ```javascript
-[filelog|VEEAM-JOB-Backup_VBC]
+[filelog|VEEAM-JOB-Backup_1]
 directory=C:\ProgramData\Veeam\Backup\Backup_1
 include=*.log
 event_marker=(\[)\d{2}(\.|-)\d{2}(\.|-)\d{4}\s\d{2}(\:|-)\d{2}(\:|-)\d{2}(\])
 tags={"Appname" : "Veeam", "Veeam_JobLog" : "Backup_1"}
 
-[filelog|VEEAM-JOB-BackupCopy_VBC]
+[filelog|VEEAM-JOB-BackupCopy_1]
 directory=C:\ProgramData\Veeam\Backup\BackupCopy_1
 include=*.log
 event_marker=(\[)\d{2}(\.|-)\d{2}(\.|-)\d{4}\s\d{2}(\:|-)\d{2}(\:|-)\d{2}(\])
